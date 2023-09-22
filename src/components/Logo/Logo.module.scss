@@ -1,0 +1,19 @@
+@import "../../scss/variables.scss";
+
+.logo {
+  font-family: $font-family-header + "-Bold";
+  font-weight: bold;
+  font-size: 36px;
+
+  @media (max-width: $dimension-tablet) {
+    font-size: $font-size-lg;
+  }
+
+  @media (max-width: $dimension-mobile-l) {
+    font-size: $font-size-sm;
+  }
+}
+
+.logo_colors {
+  color: $color-accent-1;
+}

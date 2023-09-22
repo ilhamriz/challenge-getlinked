@@ -1,0 +1,41 @@
+@import "./scss/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-body;
+  color: $color-body;
+  background-color: $color-background;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.purple-circle {
+  width: 700px;
+  height: 700px;
+  border-radius: 700px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #470984 0%,
+    rgba(71, 9, 132, 0) 100%
+  );
+  filter: blur(50px);
+  // mix-blend-mode: hard-light;
+}

@@ -1,0 +1,81 @@
+@import url("/src/assets/fonts/ClashDisplay/clash-display.scss");
+
+// Dimensions
+$dimension-mobile-s: 320px;
+$dimension-mobile-m: 375px;
+$dimension-mobile-l: 425px;
+$dimension-tablet: 768px;
+$dimension-laptop: 1024px;
+
+// Borders
+$border-radius-sm: 8px;
+$border-radius-md: 16px;
+$border-radius-lg: 32px;
+
+// Gap
+$gap-mobile: 16px;
+$gap-tablet: 24px;
+$gap-laptop: 32px;
+
+// Font Families
+$font-family-header: "ClashDisplay";
+$font-family-body: "Montserrat", sans-serif;
+
+// Font Size
+$font-size-xs: 14px;
+$font-size-sm: 16px;
+$font-size-md: 20px;
+$font-size-lg: 24px;
+$font-size-xl: 32px;
+$font-size-xl2: 40px;
+$font-size-xl3: 48px;
+$font-size-xl4: 56px;
+$font-size-xl5: 64px;
+
+// Colors
+$color-title: #ffffff;
+$color-body: #ffffff;
+$color-label: #606a74;
+$color-placeholder: #b0b4ba;
+// $color-line: #3a3a3a;
+$color-input-background: #eff0f6;
+// $color-background-gray: #f7f7fc;
+// $color-off-white: #fcfcfc;
+
+$color-accent-1: #d434fe;
+$color-accent-2: #903aff;
+$color-background: #150e28;
+
+// Transition
+$transition: 0.3s ease;
+
+@mixin text-header {
+  font-family: $font-family-header;
+  // font-weight: bold;
+  color: $color-title;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+@mixin text-body {
+  font-family: $font-family-body;
+  letter-spacing: 0.0075em;
+  color: $color-body;
+}
+
+@mixin text-button {
+  font-family: $font-family-body;
+  font-size: $font-size-xs;
+  // font-weight: 500;
+  letter-spacing: 0.0075em;
+}
+
+@mixin all-gap {
+  gap: $gap-laptop;
+
+  @media (max-width: $dimension-tablet) {
+    gap: $gap-tablet;
+  }
+  @media (max-width: $dimension-mobile-l) {
+    gap: $gap-mobile;
+  }
+}

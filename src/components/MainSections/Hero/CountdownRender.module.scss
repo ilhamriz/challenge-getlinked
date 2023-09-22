@@ -1,0 +1,31 @@
+@import "../../../scss/variables.scss";
+
+.wrapper {
+  display: flex;
+  gap: 40px;
+
+  @media (max-width: 550px) {
+    gap: 27px;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: baseline;
+}
+
+.time {
+  font-family: "Unica One", cursive;
+  font-size: $font-size-xl5;
+  line-height: 85.12px;
+
+  @media (max-width: 550px) {
+    font-size: $font-size-xl3;
+    line-height: 133%;
+  }
+}
+
+.name {
+  font-family: $font-family-body;
+  font-size: $font-size-xs;
+}

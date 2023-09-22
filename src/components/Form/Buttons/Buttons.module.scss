@@ -1,0 +1,104 @@
+@import "../../../scss/variables";
+
+$gradients: linear-gradient(
+  -45deg,
+  #903AFF,
+  #FE34B9,
+  #903AFF,
+  #FE34B9,
+);
+$border-width: 6px;
+
+.btn {
+  @include text-button;
+
+  font-size: $font-size-sm;
+  font-weight: 400;
+  border-radius: 4px;
+  padding: 16px 40px;
+  transition: 0.2s ease-in-out;
+  min-width: 172px;
+  color: $color-body;
+
+  @media (max-width: $dimension-mobile-l) {
+    min-width: 152px;
+    padding: 14px 40px;
+    font-size: $font-size-xs;
+  }
+
+  &--primary {
+    background: $gradients;
+    background-size: 400%;
+    -webkit-animation: anime 7s linear infinite;
+    animation: anime 7s linear infinite;
+
+    &:hover {
+      border-radius: 50px;
+    }
+  }
+
+  // &--secondary,
+  // &--secondary-outline {
+  //   background-color: #fff;
+  //   border: 3px solid $color-placeholder;
+  //   color: $color-label;
+
+  //   &:hover {
+  //     border-color: #cd92fc;
+  //   }
+  // }
+
+  // &--secondary-outline {
+  //   border: 1px solid $color-primary;
+  // }
+
+  // &--outline {
+  //   width: 100px;
+  //   color: $color-title;
+  //   background-color: #fff;
+  //   border-radius: 5px;
+  //   border: 3px solid transparent;
+  //   position: relative;
+
+  //   &::after {
+  //     content: "";
+  //     position: absolute;
+  //     background: $gradients;
+  //     top: calc(-1 * $border-width);
+  //     left: calc(-1 * $border-width);
+  //     height: calc(100% + $border-width * 2);
+  //     width: calc(100% + $border-width * 2);
+  //     border-radius: $border-radius-sm;
+  //     z-index: -1;
+  //     animation: anime 5s linear infinite;
+  //     background-size: 400%;
+  //   }
+  // }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  @-webkit-keyframes anime {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes anime {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
