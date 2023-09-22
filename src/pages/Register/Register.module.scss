@@ -1,0 +1,61 @@
+@import "../../scss/variables.scss";
+
+.wrapper {
+  padding: 182px 0;
+}
+.inner {
+  // display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 80px;
+}
+
+.form_wrapper {
+  padding: 65px 90px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  @media (max-width: $dimension-laptop) {
+    padding: 50px 70px;
+  }
+  @media (max-width: 500px) {
+    padding: 40px;
+  }
+  @media (max-width: $dimension-mobile-l) {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+.form_inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media (max-width: $dimension-mobile-l) {
+    gap: 24px;
+  }
+}
+
+.form_title {
+  font-family: $font-family-header + "-SemiBold";
+  font-size: $font-size-xl;
+  color: $color-accent-1;
+}
+
+.form_subtitle {
+  font-size: $font-size-xs;
+  max-width: 280px;
+
+  @media (min-width: $dimension-mobile-l) {
+    display: none;
+  }
+}

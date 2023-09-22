@@ -2,7 +2,7 @@ import { lazy } from "react";
 
 const Main = lazy(() => import("../pages/Main/Main"));
 const Contact = lazy(() => import("../pages/Contact/Contact"));
-const Register = lazy(() => import("../pages/Register"));
+const Register = lazy(() => import("../pages/Register/Register"));
 
 const routes = [
   {
