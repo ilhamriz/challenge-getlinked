@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { BigIdea, FAQ, Guidelines, Hero } from "../../components/MainSections";
+import { BigIdea, FAQ, Guidelines, Hero, Judging } from "../../components/MainSections";
 import css from "./Main.module.scss";
 import Footer from "../../components/Footer/Footer";
 
@@ -9,6 +9,7 @@ function Main() {
       <Hero />
       <BigIdea />
       <Guidelines />
+      <Judging />
       <FAQ />
       <Footer />
     </Box>
