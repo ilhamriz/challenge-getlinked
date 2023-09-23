@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import css from "./Navbar.module.scss";
 import { Link } from "react-scroll";
 import { Buttons } from "../Form";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { Logo } from "../Logo/Logo";
 import { BarIcon, closeIcon } from "../../assets/icons";
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isRegisterPage = location.pathname.includes("/register");
   const [isMenu, setIsMenu] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
@@ -94,6 +96,7 @@ function Navbar() {
                   setIsMenu(false);
                   navigate("/register");
                 }}
+                styles={isRegisterPage ? "secondary" : "primary"}
               >
                 Register
               </Buttons>

@@ -1,0 +1,137 @@
+@import "../../scss/variables.scss";
+
+.wrapper {
+  position: relative;
+  margin: 24px;
+  background: rgba(255, 255, 255, 0.01);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid $color-accent-1;
+  border-radius: 5px;
+  padding: 34px 60px 60px;
+  color: $color-title;
+
+  @media (max-width: $dimension-tablet) {
+    margin: 50px 0;
+  }
+  @media (max-width: 550px) {
+    padding: 30px;
+  }
+  @media (max-width: $dimension-mobile-l) {
+    margin: 24px 0;
+  }
+}
+
+.image {
+  img {
+    width: 100%;
+    max-width: fit-content;
+  }
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: 600;
+  margin-bottom: 16px;
+
+  @media (max-width: 550px) {
+    font-size: $font-size-lg;
+  }
+  @media (max-width: $dimension-mobile-l) {
+    font-size: $font-size-sm;
+    margin: 26px 0 29px;
+  }
+}
+
+.body {
+  margin-bottom: 40px;
+  max-width: 270px;
+  font-size: $font-size-xs;
+  line-height: 24px;
+
+  img {
+    transform: translateY(30%);
+  }
+
+  @media (max-width: $dimension-mobile-l) {
+    font-size: 12px;
+    margin-bottom: 24px;
+    line-height: normal;
+  }
+}
+
+.star_1 {
+  display: flex;
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+  transform: translateY(40%);
+
+  svg {
+    fill: $color-accent-2;
+    width: 21px;
+    height: 28px;
+  }
+
+  @media (max-width: $dimension-tablet) {
+    bottom: auto;
+    left: auto;
+    top: -60px;
+    right: 10px;
+  }
+  @media (max-width: $dimension-mobile-l) {
+    top: -30px;
+
+    svg {
+      width: 10px;
+      height: 12px;
+    }
+  }
+}
+
+.star_2 {
+  display: flex;
+  position: absolute;
+  top: 250px;
+  left: 50px;
+
+  svg {
+    fill: rgba($color: #ffffff, $alpha: 0.39);
+  }
+
+  @media (max-width: $dimension-tablet) {
+    svg {
+      width: 14px;
+      height: 18px;
+    }
+  }
+  @media (max-width: $dimension-mobile-l) {
+    top: 200px;
+    left: 30px;
+  }
+}
+
+.star_3 {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  right: 47px;
+
+  svg {
+    fill: $color-accent-1;
+    width: 21px;
+    height: 25px;
+  }
+
+  @media (max-width: 550px) {
+    bottom: -20px;
+    right: 30px;
+
+    svg {
+      width: 11px;
+      height: 13px;
+    }
+  }
+}

@@ -13,26 +13,36 @@ import React from "react";
 
 const colors = {
   title: "#14142b",
-  body: "#4e4b66",
-  background: "#FFFFFF",
-  border: "#4e4b66",
-  background_hover: "#F7F7FC",
-  outline: "#BE9C9E",
+  body: "#FFFFFF",
+  background: "rgba(255, 255, 255, 0.03)",
+  border: "#FFFFFF",
+  background_hover: "rgba(255, 255, 255, 0.1)",
+  outline: "#D434FE",
 };
 
-const StyledButton = styled("button")(
-  ({ theme }) => `
+const Button = React.forwardRef(function Button(props, ref) {
+  const { ownerState, ...other } = props;
+  return (
+    <button type="button" id={ownerState?.name} {...other} ref={ref}>
+      {other.children}
+    </button>
+  );
+});
+
+const StyledButton = styled(Button, { shouldForwardProp: () => true })(
+  () => `
   width: 100%;
-  font-size: 16px;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
   line-height: 1.5;
   color: ${colors["body"]};
   background: ${colors["background"]};
-  border: none;
-  border-radius: 8px;
-  padding: 12px 16px;
+  border: 2px solid ${colors["border"]};
+  border-radius: 4px;
+  padding: 15px 27px;
   text-align: left;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
   &:hover {
     background: ${colors["background_hover"]};
@@ -44,12 +54,12 @@ const StyledButton = styled("button")(
 
   &.${selectClasses.expanded} {
     &::after {
-      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z'/%3E%3C/svg%3E");
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'%3E%3C/path%3E%3Cpath d='M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z' fill='rgba(255,255,255,1)'%3E%3C/path%3E%3C/svg%3E");
     }
   }
 
   &::after {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z'/%3E%3C/svg%3E");
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'%3E%3C/path%3E%3Cpath d='M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z' fill='rgba(255,255,255,1)'%3E%3C/path%3E%3C/svg%3E");
     float: right;
     height: 24px;
   }
@@ -57,27 +67,28 @@ const StyledButton = styled("button")(
 );
 
 const StyledListbox = styled("ul")(
-  ({ theme }) => `
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
+  () => `
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
   box-sizing: border-box;
-  padding: 5px;
+  padding: 4px;
   margin: 4px 0;
-  min-width: 320px;
-  background: ${colors["background"]};
-  border: 1px solid ${grey[300]};
-  border-radius: 8px;
-  color: ${colors["body"]};
+  min-width: 300px;
+  background: #FFFFFF;
+  border: 2px solid ${colors["border"]};
+  border-radius: 4px;
+  color: ${colors["title"]};
   overflow: auto;
   outline: 0px;
   `
 );
 
 const StyledOption = styled(Option)(
-  ({ theme }) => `
+  () => `
   list-style: none;
   padding: 12px;
-  border-radius: 0.45em;
+  border-radius: 4px;
   cursor: pointer;
   transition: .15s ease;
 
@@ -91,7 +102,7 @@ const StyledOption = styled(Option)(
   }
 
   &:hover:not(.${optionClasses.disabled}) {
-    background-color: ${grey[100]};
+    background-color: ${grey[200]};
     color: ${colors["title"]};
   }
   `
@@ -117,7 +128,7 @@ function Component({ name, listOption }) {
     <Field name={name}>
       {({
         meta,
-        field: { onChange, value: fieldValue, ...restField },
+        field: { value: fieldValue, ...restField },
         form: { setFieldValue },
       }) => (
         <Box>
@@ -127,8 +138,8 @@ function Component({ name, listOption }) {
               value={fieldValue}
               onChange={(e, value) => setFieldValue(name, value)}
             >
-              {listOption?.map((list, idx) => (
-                <StyledOption key={idx} value={list.value}>
+              {listOption?.map((list) => (
+                <StyledOption key={list.id} value={list.id}>
                   {list.name}
                 </StyledOption>
               ))}

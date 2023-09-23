@@ -5,7 +5,7 @@ import { Input } from "@mui/base";
 
 const colors = {
   text: "#FFFFFF",
-  placeholder: "#FFFFFF",
+  placeholder: "rgba(255, 255, 255, 0.25)",
   background: "rgba(255, 255, 255, 0.03)",
   border: "#FFFFFF",
   background_hover: "rgba(255, 255, 255, 0.1)",
@@ -14,7 +14,7 @@ const colors = {
 
 const defaultForm = `
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: ${colors["text"]};
@@ -22,7 +22,7 @@ const defaultForm = `
   border: 2px solid ${colors["border"]};
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
-  padding: 14px 30px;
+  padding: 14px 27px;
   letter-spacing: 0.01em;
 
   &::placeholder {
