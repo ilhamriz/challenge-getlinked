@@ -1,0 +1,38 @@
+@import "../../../scss/variables.scss";
+
+.wrapper {
+  font-size: $font-size-xs;
+  line-height: 27.5px;
+  text-align: left;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid $color-accent-1;
+  font-weight: 500;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    background-color: rgba($color: #ffffff, $alpha: 0.05);
+  }
+
+  &.active {
+    border-bottom: none;
+  }
+}
+
+.icons {
+  color: $color-accent-1;
+  font-size: $font-size-md;
+}
+
+.content {
+  padding: 0 18px 18px;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid $color-accent-1;
+}

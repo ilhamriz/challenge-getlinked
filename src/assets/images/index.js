@@ -8,6 +8,11 @@ import man_sit_on_chair from "./man-sit-on-chair-test.png";
 import man_woman_walk from "./man-woman-walk.png";
 import success from "./success.png";
 import emoji_dialog from "./emoji_dialog.png";
+import big_idea from "./big_idea.png";
+import unique_arrow from "./unique_arrow.png";
+import woman_sit from "./woman_sit.png";
+import judging from "./judging.png";
+import faq from "./faq.png";
 
 export {
   creative,
@@ -20,4 +25,9 @@ export {
   man_woman_walk,
   success,
   emoji_dialog,
+  big_idea,
+  unique_arrow,
+  woman_sit,
+  judging,
+  faq,
 };

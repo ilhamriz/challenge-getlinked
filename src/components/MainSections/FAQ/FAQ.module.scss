@@ -1,0 +1,108 @@
+@import "../../../scss/variables.scss";
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 62px 0;
+
+  @media (max-width: $dimension-tablet) {
+    grid-template-columns: auto;
+    gap: 60px;
+  }
+}
+
+.image {
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  img {
+    width: 100%;
+    max-width: fit-content;
+  }
+
+  @media (max-width: $dimension-tablet) {
+    img {
+      max-width: 400px;
+    }
+  }
+}
+
+.content {
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .title {
+    font-size: $font-size-xl;
+    font-family: $font-family-header + "-Bold";
+    margin-bottom: 16px;
+
+    span {
+      color: $color-accent-1;
+    }
+  }
+
+  .body {
+    font-size: $font-size-xs;
+    line-height: 27.5px;
+    max-width: 350px;
+    margin-bottom: 68px;
+  }
+
+  @media (max-width: $dimension-laptop) {
+    padding: 0 24px;
+  }
+  @media (max-width: $dimension-tablet) {
+    align-items: center;
+    text-align: center;
+  }
+  @media (max-width: 480px) {
+    .title {
+      font-size: $font-size-lg;
+      margin-bottom: 8px;
+    }
+    .body {
+      margin-bottom: 45px;
+    }
+  }
+  @media (max-width: $dimension-mobile-l) {
+    padding: 0 16px;
+    .title {
+      font-size: $font-size-md;
+    }
+  }
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.star_1 {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+
+  svg {
+    fill: $color-accent-2;
+  }
+
+  @media (max-width: $dimension-tablet) {
+    left: calc(50% - 150px);
+
+    svg {
+      width: 18px;
+      height: 22px;
+    }
+  }
+  @media (max-width: 480px) {
+    left: calc(50% - 120px);
+  }
+}

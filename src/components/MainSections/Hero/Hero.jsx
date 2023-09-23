@@ -21,7 +21,7 @@ function Hero() {
 
   return (
     <div className={css.wrapper}>
-      <Box className={css.line} />
+      <Box className="line" />
 
       <Container maxWidth={"lg"} className={css.custom_container}>
         <Box className={css.inner}>

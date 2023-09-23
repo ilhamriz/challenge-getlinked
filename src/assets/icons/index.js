@@ -7,6 +7,8 @@ import FacebookIcon from "./Facebook";
 import TwitterXIcon from "./TwitterX";
 import LinkedinIcon from "./Linkedin";
 import ArrowLeftIcon from "./ArrowLeft.png";
+import MapIcon from "./Map";
+import PhoneIcon from "./Phone";
 
 export {
   closeIcon,
@@ -17,5 +19,7 @@ export {
   FacebookIcon,
   TwitterXIcon,
   LinkedinIcon,
-  ArrowLeftIcon
+  ArrowLeftIcon,
+  MapIcon,
+  PhoneIcon,
 };

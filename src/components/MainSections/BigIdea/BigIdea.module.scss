@@ -1,0 +1,131 @@
+@import "../../../scss/variables.scss";
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 62px 0;
+
+  @media (max-width: $dimension-tablet) {
+    grid-template-columns: auto;
+    gap: 64px;
+  }
+}
+
+.image {
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  img {
+    width: 100%;
+    max-width: fit-content;
+  }
+
+  @media (max-width: $dimension-tablet) {
+    img {
+      max-width: 400px;
+    }
+  }
+}
+
+.content {
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+
+  .title {
+    max-width: 450px;
+    font-size: $font-size-xl;
+    font-family: $font-family-header + "-Bold";
+
+    span {
+      color: $color-accent-1;
+    }
+  }
+
+  .body {
+    font-size: $font-size-xs;
+    line-height: 27.5px;
+  }
+
+  @media (max-width: $dimension-laptop) {
+    padding: 0 24px;
+  }
+  @media (max-width: $dimension-tablet) {
+    align-items: center;
+    text-align: center;
+  }
+  @media (max-width: 480px) {
+    .title {
+      font-size: $font-size-lg;
+      max-width: 350px;
+    }
+  }
+  @media (max-width: $dimension-mobile-l) {
+    padding: 0 16px;
+    .title {
+      font-size: $font-size-md;
+      max-width: 250px;
+    }
+  }
+}
+
+.star_1 {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 30%;
+
+  svg {
+    fill: $color-accent-1;
+    width: 21px;
+    height: 25px;
+  }
+
+  @media (max-width: $dimension-mobile-l) {
+    left: 20px;
+
+    svg {
+      width: 11px;
+      height: 13px;
+    }
+  }
+}
+
+.star_2 {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  right: 0;
+
+  svg {
+    fill: $color-accent-2;
+
+    @media (max-width: $dimension-mobile-l) {
+      width: 11px;
+      height: 13px;
+    }
+  }
+}
+
+.arrow {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  @media (max-width: 900px) {
+    width: 40px;
+    right: 20px;
+  }
+  @media (max-width: $dimension-tablet) {
+    width: 30px;
+    bottom: -30px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
