@@ -11,6 +11,7 @@ function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
   const isRegisterPage = location.pathname.includes("/register");
+  const isHomePage = location.pathname === "/";
   const [isMenu, setIsMenu] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
@@ -75,9 +76,37 @@ function Navbar() {
             </Box>
             <Box className={css.nav__menu__content}>
               <Box className={css.nav__menu__list}>
-                <LinkScroll target="Timeline" />
-                <LinkScroll target="Overview" />
-                <LinkScroll target="FAQs" />
+                {isHomePage ? (
+                  <>
+                    <LinkScroll target="Timeline" />
+                    <LinkScroll target="Overview" />
+                    <LinkScroll target="FAQs" />
+                  </>
+                ) : (
+                  <>
+                    <NavLink
+                      to={"/"}
+                      className={css.nav__menu__item}
+                      onClick={() => setIsMenu(false)}
+                    >
+                      Timeline
+                    </NavLink>
+                    <NavLink
+                      to={"/"}
+                      className={css.nav__menu__item}
+                      onClick={() => setIsMenu(false)}
+                    >
+                      Overview
+                    </NavLink>
+                    <NavLink
+                      to={"/"}
+                      className={css.nav__menu__item}
+                      onClick={() => setIsMenu(false)}
+                    >
+                      FAQs
+                    </NavLink>
+                  </>
+                )}
                 <NavLink
                   to={"/contact"}
                   className={({ isActive }) =>
